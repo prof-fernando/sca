@@ -12,8 +12,6 @@ public class ProgramaTeste {
 
 	public static void main(String[] args) {
 		
-		
-		
 		Turma t = new Turma();
 		t.setDescricao("Turma SI 2014 ");
 		
