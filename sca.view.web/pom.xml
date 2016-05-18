@@ -1,0 +1,29 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.edu.iffarroupilha</groupId>
+	<artifactId>sca.view.web</artifactId>
+	<version>1.0</version>
+	<name>SCA VISAO WEB</name>
+	<packaging>war</packaging>
+
+	<description>		</description>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>br.edu.iffarroupilha</groupId>
+			<artifactId>sca.controle</artifactId>
+			<version>1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.caelum</groupId>
+			<artifactId>vraptor</artifactId>
+			<version>4.2.0-RC3</version>
+		</dependency>
+
+	</dependencies>
+
+
+</project>

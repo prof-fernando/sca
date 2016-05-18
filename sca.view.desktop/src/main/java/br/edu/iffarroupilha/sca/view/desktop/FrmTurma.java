@@ -55,7 +55,6 @@ public class FrmTurma extends JFrame {
 				JOptionPane.showMessageDialog(null, "Gravado com sucesso!");
 			}
 		}  );
-		
 	}
 
 	public static void main(String[] args) {
