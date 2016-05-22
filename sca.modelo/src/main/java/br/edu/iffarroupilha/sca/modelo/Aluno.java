@@ -78,6 +78,8 @@ public class Aluno {
 	public void setDataNascimento(Date dataNascimento) {
 		this.dataNascimento = dataNascimento;
 	}
-	
+	public boolean equals(Object obj) {
+		return getMatricula() == ((Aluno)obj).getMatricula();
+	}
 	
 }

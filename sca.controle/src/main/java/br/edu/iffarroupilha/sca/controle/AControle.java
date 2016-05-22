@@ -34,6 +34,24 @@ public abstract class AControle {
 		sessao.getTransaction().commit();
 		sessao.close();
 	}
+	
+	/**
+	 * <p>
+	 * Exclui uma informação do banco de dados, a entidade a ser
+	 * excluida deve conter um id.
+	 * </p>
+	 */
+	public void remover(Object entidade){
+		Session sessao = HibernateUtil.getFabrica().openSession();
+		// abre a transação
+		sessao.beginTransaction();
+		// salava ou atualiza a entidade
+		sessao.delete(entidade);
+		// comita a transacao
+		sessao.getTransaction().commit();
+		sessao.close();
+	}
+	
 	/**
 	 * <p>
 	 * Retorna uma lista com todos os registros de uma determinada
@@ -49,5 +67,12 @@ public abstract class AControle {
 		sessao.close();
 		return dados;
 	}
+	/**
+	 * <p>
+	 * Especificacao do comportamento de busca por id, cabendo
+	 * as classes concretas realizar a sua implementacao
+	 * </p>
+	 */
+	public abstract Object buscaPorId(int id);
 	
 }

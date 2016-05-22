@@ -38,4 +38,17 @@ public class Turma {
 		this.descricao = descricao;
 	}
 
+	/**
+	 * <p>
+	 * Metodo sobrescrito para apresentar a descrição da turma quando ela for
+	 * inserida na combobox
+	 * </p>
+	 */
+	public String toString() {
+		return descricao;
+	}
+
+	public boolean equals(Object obj) {
+		return getIdTurma() == ((Turma) obj).getIdTurma();
+	}
 }
