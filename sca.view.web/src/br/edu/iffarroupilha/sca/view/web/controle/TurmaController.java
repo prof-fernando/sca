@@ -26,4 +26,11 @@ public class TurmaController {
 		TurmaControle tc = new TurmaControle();
 		result.include("turmas", tc.listar(Turma.class));
 	}
+	
+	public void gravar(Turma turma){
+		new TurmaControle().gravar(turma);
+		result.include("MSG","Gravado com sucesso!");
+		// apos gravar redireciona ao metodo de listagem
+		result.forwardTo(this).listarTurma();
+	}
 }

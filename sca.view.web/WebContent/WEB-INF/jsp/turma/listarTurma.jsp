@@ -20,7 +20,24 @@
 
 <script type="text/javascript">
 	$(function() {
-		$('table').DataTable();
+		$('table').DataTable({
+			  "language": { 
+		            "lengthMenu": "Registros: _MENU_ ",
+		            "zeroRecords": "Nenhum registro encontrado!",
+		            "info": "Página _PAGE_ de _PAGES_",
+		            "infoEmpty": "Sem registros",
+		            "infoFiltered": "(buscando em _MAX_ registros)",
+		            "search" : "Buscar:",
+		            "paginate" : {
+		            	"first" : "Primeiro",
+		            	"last": "Último",
+		            	"next" : ">>",
+		            	"previous" : "<<"
+		            }
+		        }
+		        
+			
+		});
 	})
 </script>
 
@@ -28,7 +45,16 @@
 <body>
 
 
-	Formulário
+	<form method="post" 
+	  action="http://localhost:8080/sca.view.web/turma/gravar" >
+	   <label for="txtDescricao" >Descricao: </label>
+	   <input type="text" id="txtDescricao"  name="turma.descricao" >
+	   <input type="submit" value="gravar">
+	</form>
+	
+	<h2>
+	${MSG}
+	</h2>
 	<hr>
 	<table >
 		<thead>
