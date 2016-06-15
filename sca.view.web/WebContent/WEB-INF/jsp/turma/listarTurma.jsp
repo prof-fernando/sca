@@ -24,7 +24,7 @@
 			  "language": { 
 		            "lengthMenu": "Registros: _MENU_ ",
 		            "zeroRecords": "Nenhum registro encontrado!",
-		            "info": "Página _PAGE_ de _PAGES_",
+		            "info": "Página _PAGE_ de _PAGES_ (total _MAX_)",
 		            "infoEmpty": "Sem registros",
 		            "infoFiltered": "(buscando em _MAX_ registros)",
 		            "search" : "Buscar:",
@@ -38,6 +38,12 @@
 		        
 			
 		});
+		
+		$('.btnExcluir').click(function(){
+			var resposta = confirm('Tem certeza que deseja excluir?');
+			return resposta;
+		});
+		
 	})
 </script>
 
@@ -48,7 +54,10 @@
 	<form method="post" 
 	  action="http://localhost:8080/sca.view.web/turma/gravar" >
 	   <label for="txtDescricao" >Descricao: </label>
-	   <input type="text" id="txtDescricao"  name="turma.descricao" >
+	   <input type="text" id="txtDescricao"  name="turma.descricao"
+	   value="${TURMA.descricao }" >
+	   <input type="hidden"  name="turma.idTurma"
+	   value="${TURMA.idTurma }" >
 	   <input type="submit" value="gravar">
 	</form>
 	
@@ -68,8 +77,19 @@
 			<c:forEach items="${turmas }" var="t">
 				<tr>
 					<td>${t.descricao }</td>
-					<td></td>
-					<td></td>
+					<td>
+						<a href="http://localhost:8080/sca.view.web/turma/editar/${t.idTurma}" >
+						 editar </a>				
+					</td>
+					<td>
+						<a 
+						  class="btnExcluir"
+						  href="http://localhost:8080/sca.view.web/turma/excluir/${t.idTurma}" >
+						
+						 excluir </a>							
+					</td>
+					
+					
 				</tr>
 			</c:forEach>
 		</tbody>
